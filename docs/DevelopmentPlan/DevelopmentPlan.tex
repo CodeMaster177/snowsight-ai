@@ -38,18 +38,16 @@ and technology logistics. The team charter is also included at the end of this d
 
 \section{Confidential Information?}
 
-There is no confidential information associated with this project.
+The images used to train the machine learning model are confidential and cannot be shared publicly. The images will be provided by various municipalities and are subject to a confidentiality agreement.
+The team will not share any images or data that is considered confidential. A confidentiality agreement has not been completed yet, but a template is available via this link: \href{../../Capstone Template - Confidentiality Only.docx}{Capstone Template}.
 
 \section{IP to Protect}
 
-\wss{State whether there is IP to protect.  If there is, point to the agreement.
-All students who are working on a project that requires an IP agreement are also
-required to sign the ``Intellectual Property Guide Acknowledgement.''}
+For this project, there is IP to protect. An IP agreement has not been completed yet, but a template is available via this link: \href{../../Capstone Template - IP Owned By Company.docx}{Capstone Template}.
 
 \section{Copyright License}
 
-\wss{What copyright license is your team adopting.  Point to the license in your
-repo.}
+The team is explicity choosing not to include a copyright license for this project, meaning that the code is under exclusive copyright. This information is also available in the license file: \href{../../LICENSE}{LICENSE}.
 
 \section{Team Meeting Plan}
 
@@ -63,101 +61,108 @@ Meetings should be structured as follows.
 \newline
 
 At the start of every meeting, the chair will go over the purpose of the meeting and discuss what is on the agenda. 
+The meeting notetaker should take note of the agenda.
 \newline
 
 After outlining the agenda, the chair will go through each meeting item one-by-one. Each item should 
 have a person responsible for that task to report on progress, expected outcomes, and 
 explain next steps if necessary. Each item should have a clear time allocation, and expected
-deadline. 
+deadline. The meeting notetaker should take note of all of this information.
 \newline
 
 At the end of the meeting, the chair will summarize all key decisions made, and restates
-actions items for the 
-
-
-\wss{How often will the team meet? where? when?}
-
-\wss{If the meeting is a physical location (not virtual), out of an abundance of
-caution for safety reasons you shouldn't put the location online}
-
-\wss{To help schedule meetings, you can use the lecture/tutorial time when we do 
-not have anything else scheduled.}
-
-\wss{How often will you meet with your supervisor/advisor?  when?  where?}
-
-\wss{Will meetings be virtual?  At least some meetings should likely be
-in-person.}
-
-\wss{How will the meetings be structured?  There should be a chair for all meetings.  
-There should be an agenda for all meetings.}
+actions items for the week. The meeting notetaker will write a section for meeting summary notes.
 
 \section{Team Communication Plan}
 
-\wss{Issues on GitHub should be part of your communication plan.}
+Team will use the following communication methods:
+
+\begin{itemize}
+    \item Issues: GitHub Issues
+    \item Regular Weekly Meetings: In-person at McMaster Libraries
+    \item Virtual Meetings: Discord
+    \item Stakeholder Meetings: Teams
+    \item Meeting minutes \& Agenda: GitHub
+    \item Project discussion: Discord
+    \item Urgent/Emergency Communication: SMS Messaging
+\end{itemize}
+
+Team members will regularly check in on communication channels for updates,
+and enable notifications. Team members should make an effort to respond to messages within
+24 hours. Team members will exchange phone numbers to communicate in case of emergency or urgent situations.
 
 \section{Team Member Roles}
 
-\wss{You should identify the types of roles you anticipate, like notetaker,
-leader, meeting chair, reviewer.  Assigning specific people to those roles is
-not necessary at this stage.  In a student team the role of the individuals will
-likely change throughout the year.}
+\begin{itemize}
+    \item{Note Taker: Takes notes to document key events that occurred during weekly team meetings,
+ summarizing key decisions made during the meeting. Responsible for producing 
+organized, neat, and concise notes made accessible to the team for reference.\newline}
+    \item {Meeting Chair: Is responsible for leading discussion for weekly team meetings. Should outline a
+meeting agenda in advance to facilitate smooth discussion of current issues and action items. \newline}
+    \item {Task Owner: Responsible for complete ownership of a particular task or deliverable. During a team meeting,
+they are expected to know important details regarding a task's progress and expected deadlines. They should 
+be prepared to report on a task during weekly stand-up.}
+    \item{LLaison: Responsible for external communication with faculty and all 3rd parties.\newline}
+\end{itemize}
 
 \section{Workflow Plan}
 
+Git will be used for version control and collaboration. The team will use GitHub to host the repository and manage issues, pull requests, and code reviews. Each team member will be responsible for creating their own branches for their work and submitting pull requests for review before merging into the main branch.
+A general workflow plan is listed below.
+
 \begin{itemize}
-	\item How will you be using git, including branches, pull request, etc.?
-	\item How will you be managing issues, including template issues, issue
-	classification, etc.?
-  \item Use of CI/CD
+  \item When a deliverable or task is necessary, an issue will be created in the GitHub repository. The issue will contain a description of the task, expected outcomes, and any relevant information. The issue will be assigned to a team member who will be responsible for completing the task.
+  \item The team member will create a new branch for the task and work on it. The branch should be named according to the issue number and a brief description of the task.
+  \item Once the task is completed, the team member will submit a pull request for review. The pull request should contain a description of the changes made, any relevant information, and a link to the issue.
+  \item The team member will request a review from at least one other team member. The reviewer will review the code, provide feedback, and approve or request changes to the pull request.
+  \item Once the pull request is approved, the team member will merge the changes into the main branch. The issue will be closed, and the task will be considered complete.
 \end{itemize}
+
+GitHub Issues will be used to track deliverables/tasks, lectures, and supervisor/TA/team meetings. For deliverables and tasks, tags will be used to identify the kind of task that needs to be done. This could include tags like "bug fixing", "feature development", "documentation", etc. For meetings, tags will be used to identify the type of meeting.
+
+GitHub Actions will be used as the CI/CD platform, and will be used for linting, unit testing, and compiling any documentation written in LaTeX. These workflows will be automatically on push and pull requests, and ensure that both code and documentation are up to standard.
+
 
 \section{Project Decomposition and Scheduling}
 
-\begin{itemize}
-  \item How will you be using GitHub projects?
-  \item Include a link to your GitHub project
-\end{itemize}
+The team will use Github Projects to track tasks and deliverables. The team will use a Kanban board to track the progress of tasks and deliverables. The board will have columns for "To Do", "In Progress", "In Review", and "Done".
+Each task or deliverable will be represented by a card on the board, which will contain a description of the task, expected outcomes, and any relevant information. The cards will be moved across the columns as the task progresses.
+Each card will be tied to a GitHub issue, which will be used to track the progress of the task. The issue will be assigned to a team member who will be responsible for completing the task.
 
-\wss{How will the project be scheduled?  This is the big picture schedule, not
-details. You will need to reproduce information that is in the course outline
-for deadlines.}
+The project schedule below follows the timeline detailed in the course syllabus.
+ \begin{itemize}
+   \item Weeks 4: Problem Statement, Proof of Concept (POC) Plan, Development Plan, Team Charter
+   \item Week 6: Requirements Document (SRS) Revision 0, Hazard Analysis Revision 0
+   \item Week 8: Verification \& Validation (V\&V) Plan Revision 0
+   \item Week 10: Design Document Rev -1 and CD-Fall Rev 0
+   \item Weeks 11+12: Proof of Concept Demo + Interviews
+   \item Week 16: Design Document Revision 0
+   \item Week 18+19: Revision 0 Demo + Interviews
+   \item Week 22: V\&V Report Rev 0 and CD-Winter Rev 0
+   \item Week 24: Final Demonstration (Revision 0)
+   \item Week 26: EXPO Demonstration, Final Documentation (Revision 1)
+ \end{itemize}
 
 \section{Proof of Concept Demonstration Plan}
 
 The main risk towards the success of the project is the ability to accurately detect and classify the state of the road based on the information given.
-During the proof of concept demonstration, we will demonstrate that our model can accurately detect and classify the state of the road based on the information given.
+During the proof of concept demonstration, we will demonstrate that our model can be given an image of a road and accurately detect and classify the state of the road.
+
+Some major risks and corresponding mitigation strategies are as follows:
+\begin{itemize}
+    \item Risks associated with the quality and quantity of images provided by municipalities. Currently, the project assumes that the team will have a large, labelled dataset of images to train the model with.
+    \begin{itemize}
+      \item To address this, the team will do research into public datasets that can be used to train the model. The team will also investigate data augmentation techniques to increase the size of the dataset.
+    \end{itemize}  
+    \item Another major risk is the model's ability to classify the state of the road in a way that is universilly applicable to all municipalities. The model may be able to classify the state of the road in a way that is specific to a certain municipality, but not applicable to others.
+    \begin{itemize}
+      \item As a midway point, the model will be trained to classify the state of the road in a way that is applicable to a specific municipality. The team will then investigate how to generalize the model to work for other municipalities.
+    \end{itemize}
+\end{itemize}
 
 \section{Expected Technology}
 
-\wss{What programming language or languages do you expect to use?  What external
-libraries?  What frameworks?  What technologies.  Are there major components of
-the implementation that you expect you will implement, despite the existence of
-libraries that provide the required functionality.  For projects with machine
-learning, will you use pre-trained models, or be training your own model?  }
-
-\wss{The implementation decisions can, and likely will, change over the course
-of the project.  The initial documentation should be written in an abstract way;
-it should be agnostic of the implementation choices, unless the implementation
-choices are project constraints.  However, recording our initial thoughts on
-implementation helps understand the challenge level and feasibility of a
-project.  It may also help with early identification of areas where project
-members will need to augment their training.}
-
-Topics to discuss include the following:
-
-\begin{itemize}
-\item Specific programming language
-\item Specific libraries
-\item Pre-trained models
-\item Specific linter tool (if appropriate)
-\item Specific unit testing framework
-\item Investigation of code coverage measuring tools
-\item Specific plans for Continuous Integration (CI), or an explanation that CI
-  is not being done
-\item Specific performance measuring tools (like Valgrind), if
-  appropriate
-\item Tools you will likely be using?
-\end{itemize}
+Please note that the technologies and tools listed above are not final and may change as the project progresses. The team will evaluate the effectiveness of the tools and technologies used and make adjustments as necessary.
 
 Python will be the primary programming language used for this project. We will be using libraries such as OpenCV for image processing, TensorFlow or PyTorch for machine learning, and NumPy for numerical computations. We will also utilize pre-trained models for road state detection and classification.
 
@@ -167,55 +172,32 @@ For version control, we will use Git and GitHub. We will use CI for linting and 
 
 \section{Use of AI and LLMs}
 
-\wss{This section is a continuation of the previous section.  The role of LLMs
-in your project as important enough to warrant their own section.  
-How will your team be using LLMs for code and documentation development?  
-What tools will you be using?  How will you verify the output of your LLMs?}
+Ai and LLMs will be used to assist in the development of code and debugging. The team will also use AI to assist in the writing of documentation. The agents that the team will use are Github Copilot, Claude Sonnet 5.5, and Google Gemini Flash 3.6.
+All code and documentation generated by AI will be reviewed by at least two members of the team to ensure accuracy and quality, and must pass linting and unit tests before being pushed into a branch. Additionally, planning mode will be used for any
+agents that are used to ensure that the output is accurate and relevant to the task at hand.
 
 \section{Coding Standard}
 
-PEP 8 will be used as the coding standard for Python code.
+PEP 8 will be used as the coding standard for Python code. In the event that a different language is used, the team will abide by the standards set by the creators of the language.
 
-
+In the event that the coding standard fails to cover a specific case, the team will discuss and agree on a standard to follow for that specific case. Linters will be used to ensure consistent and clean code according to the specified standards.
 
 \newpage{}
 
 \section{Appendix --- Generative AI Use Disclosure}
 
-\wss{ChatGPT (version 5) was used to brainstorm ideas for the template for this disclose section.}
-
-\wss{This section is about the use of AI to write this document, not your
-planned use of AI for your project.  You discuss that topic in one of the
-sections in the body of this report.}
-
 \subsection{AI Tools Used}
 
-\wss{Give the name of the AI tool(s) used and the version.}
+Github Copilot, version 1.0.88.
 
 \subsection{How and Where Used}
 
-\wss{Explain what the tool(s) were used for.  Examples include: brainstorming,
-explaining a technical concept, reviewing the document, generating or modifying
-text, generating or modifying diagrams, identifying errors or omissions or
-inconsistencies.}
-
-\wss{For each of the uses, identify which parts of the document were affected.}
-
-\wss{You do not need to report every interaction, but you should disclose the 
-uses that materially contributed to your work}
+Github Copilot was used to complete sentences in the use of AI + LLM, expected technology, and workflow plan sections.
 
 \subsection{Verification of AI-Generated Content}
 
-\wss{\begin{itemize}
-    \item Describe how the team checked AI-generated or AI-assisted material
-    before including it in the document.
-    \item In particular, verify factual claims, technical assertions,
-    requirements, calculations, references, and other information for which an
-    AI system may produce incorrect or fabricated results.
-    \item \textbf{The team is responsible for the accuracy, completeness,
-consistency, and appropriateness of the submitted document, regardless of
-whether material was generated by a human or an AI system.}
-\end{itemize}}
+Since Copilot only completes sentences, the team wrote short, concise sentences that were then expanded by Copilot. This way, any ideas in the document are the team's own, and Copilot is only used to expand on those ideas.
+For any documentation generated by Copilot, a second member of the team reviewed the content before allowing it to be pushed. For any technologies that were suggested by Copilot, the team manually researched the technology to ensure that it was relevant and applicable to the project.
 
 \newpage{}
 
