@@ -1,7 +1,6 @@
 \documentclass{article}
 
 \usepackage{tabularx}
-
 \usepackage{booktabs}
 
 \title{Problem Statement and Goals\\\progname}
@@ -11,7 +10,6 @@
 \date{}
 
 \input{../Comments.text}
-
 \input{../Common.text}
 
 \begin{document}
@@ -19,240 +17,344 @@
 \maketitle
 
 \begin{table}[hp]
-
-\caption{Revision History} \label{TblRevisionHistory}
+\caption{Revision History}
+\label{TblRevisionHistory}
 
 \begin{tabularx}{\textwidth}{llX}
-
 \toprule
-
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-
 \midrule
-
-Date1 & Name(s) & Description of changes\\
-
-Date2 & Name(s) & Description of changes\\
-
-... & ... & ...\\
-
+September 2026 & SnowSight AI & Initial problem statement and project goals\\
 \bottomrule
-
 \end{tabularx}
-
 \end{table}
 
 \section{Problem Statement}
 
-\wss{You should check your problem statement with the
-
-\href{https://smiths.github.io/capTemplate/Checklists/ProbState-Checklist.pdf}
-
-{problem statement checklist}}.
-
-\wss{You can change the section headings, as long as you include the required
-
-information.}
-
 \subsection{Problem}
 
-Municipalities are responsible for ensuring that roads are maintained to an
-acceptable standard during winter weather conditions. Winter maintenance
-activities, such as snow clearing, plowing, salting, and other road treatments,
-are performed across large municipal road networks to maintain safe and usable
-transportation infrastructure. In many cases, these activities are performed by
-contractors on behalf of municipalities. Once maintenance work has been
-completed, municipalities need to determine whether the resulting road
-conditions satisfy their required winter maintenance standards.
+During winter season, municipalities are responsible for maintaining safe and
+usable transportation infrastructure. Winter maintenance activities, including
+snow clearing, plowing, and salting, are performed throughout large municipal
+road networks. Such services may be performed directly by municipalities or by
+independent contractors working on their behalf. Once maintenance has been
+completed, municipalities need to verify whether the final road condition
+satisfies the winter maintenance standard for that specific region.
 
-A major challenge is that records of maintenance activity do not necessarily
-demonstrate the quality or completeness of the work that was performed. For
-example, knowing that a winter maintenance vehicle travelled along a particular
-road confirms that the vehicle was present at that location, but does not
-confirm that the road was left in an acceptable condition. A road may still
-contain excessive snow, ice, or other conditions that do not meet the required
-level of service after a maintenance vehicle has completed its work. As a
-result, municipalities need information about the actual condition of the road
-following maintenance rather than relying only on records indicating that a
-maintenance activity occurred.
+The current records of maintenance activity do not clearly demonstrate the
+quality or completeness of the work performed. For instance, a record showing
+that a maintenance vehicle travelled along a road establishes that the vehicle
+was present, but does not prove that the road was left in an acceptable
+condition. Snow, ice, or debris conditions may still remain even after a
+maintenance pass. Therefore, municipalities need concrete evidence of the
+actual post-maintenance road condition instead of simply relying on records
+indicating that maintenance activity has occurred.
 
-Assessing completed winter maintenance work is also complicated by differences
-in maintenance requirements between municipalities. Municipalities may define
-different standards for what constitutes an acceptable post-maintenance road
-condition. Consequently, the same observed road condition may satisfy the
-requirements of one municipality while failing to satisfy those of another.
-Determining whether winter maintenance work has been completed satisfactorily
-therefore requires both an assessment of the resulting road condition and
-consideration of the standards applicable to the location where the work was
-performed.
+Verification is further complicated as acceptable road conditions are not
+always identical across municipalities. Different jurisdictions may
+define different levels of service, priorities, or acceptable post-maintenance
+requirements. A road state that is considered acceptable under one municipality's
+standards may be considered unacceptable under another's. Evaluating
+completed maintenance work requires both an assessment of the resulting road
+condition and consideration of the standard applicable to the region in
+which the work was performed.
 
-The ability to verify the quality of completed work is important for both
-municipal service management and contractor accountability. Municipalities need
-reliable evidence to determine whether contracted winter maintenance services
-have achieved the required level of service. Without a consistent method of
-assessing post-maintenance road conditions, verification may require significant
-manual review and may be difficult to perform consistently across large numbers
-of road segments. This can make it difficult to identify inadequate maintenance
-work and to determine whether contractors have fulfilled their obligations.
+The sheer scale of municipal road networks makes consistent verification challenging.
+Manually examining large quantities of post-maintenance evidence requires
+significant time and effort and may result in conflicting assessments between
+different reviewers or road segments. Without a consistent assessment process,
+municipalities may have difficulty identifying inadequate maintenance,
+determining whether extra treatment is required, and evaluating whether a
+contractor has fulfilled the expected standard level of service.
 
-The verification of completed work is also related to contractor payment.
-Municipalities need sufficient evidence that required maintenance standards have
-been satisfied before determining whether completed work qualifies for payment.
-A lack of clear and consistent information about post-maintenance road
-conditions can make this decision more difficult and can create uncertainty for
-both municipalities and contractors. Therefore, the central problem is to
-provide an objective and consistent assessment of post-maintenance road
-conditions that can be evaluated against location-specific municipal standards
-and used to support verification of completed winter maintenance work.
+Reliable verification is also essential for contractor accountability and
+payment decisions. Municipalities require sufficient evidence that contracted
+work has achieved the expected standard before determining whether the work
+qualifies for payment. Additioanlly, contractors have an interest in assessments
+being consistent, traceable, and based on the standards under which their work
+was performed.
+
+The central problem is therefore the need for an objective, consistent, and
+scalable means of assessing the condition of municipal roads after winter
+maintenance, comparing that condition with the applicable municipal standard,
+and providing sufficient evidence to support maintenance-quality and contractor
+payment verification. The problem concerns assessing what condition the road
+was left in and whether that condition is acceptable; the particular technical
+method used to perform that assessment is outside the scope of the problem
+definition.
 
 \subsection{Inputs and Outputs}
 
-The problem can be characterized using three primary high-level inputs. The
-first input is information representing the observed condition of a road after
-winter maintenance or treatment has been performed. This information provides
-evidence of the state in which the road was left following the maintenance
-activity. The second input is the geographic location associated with the
-observed road segment. The location is necessary because the requirements used
-to evaluate a road may vary between municipalities. The third input is the
-applicable winter maintenance standard or level-of-service requirement
-associated with that location.
+At a high level overview, the problem has three primary inputs.
 
-The primary output is an assessment of the post-maintenance condition of the
-road. This assessment identifies the observed road state in a form that can be
-consistently interpreted. A further output indicates whether the assessed road
-condition satisfies the winter maintenance standard applicable to its location.
-Together, these outputs provide information that can be used to determine
-whether the completed maintenance work meets the municipality's requirements.
+The first input is evidence representing the observed condition of a road
+segment after winter maintenance services have occurred. This evidence
+represents the physical state in which the road was left and may contain
+observable conditions, like remaining snow, ice, slush, water, or other forms
+of debris.
 
-The assessment also provides information that can support contractor payment
-verification. If the resulting road condition satisfies the applicable
-maintenance requirements, the completed work can be identified as satisfying
-the conditions associated with payment. If the requirements are not satisfied,
-the work can instead be identified for further review. The final payment
-decision remains associated with the municipality's policies and contractual
-requirements.
+The second input is the location information linked with the observed road
+segment. Location establishes which jurisdiction and road segment are being
+assessed and allows the appropriate maintenance expectations to be associated
+with the observation.
+
+The third input is the related winter maintenance standard or
+level-of-service criterion for that location. This defines the conditions
+against which the observed road state is evaluated.
+
+The primary output is a classification or assessment detailing the observed
+post-maintenance road conditions. The evaluation must provide a consistent and
+easily understandable representation of the road's condition.
+
+A second output is a conclusion of whether the assessed road condition
+satisfies the applicable maintenance standard. This output seperates work
+that meets the relevant standard from work that fails to meet the standard or
+requires additional review.
+
+A third output is a verification result that can assist in contractor-payment
+decisions. The result shows whether the available assessment supports the
+conclusion that the maintenance work satisfied the applicable level of service or
+whether the work should be referred for extra review. The final authorization
+and transfer of payment remain governed by municipal policies and contractual
+requirements and are not included in the core problem.
 
 \subsection{Stakeholders}
 
-The primary stakeholders are municipalities responsible for managing winter
-road maintenance services. Municipal staff need to determine whether roads have
-been maintained according to the standards established for their jurisdiction.
-They require reliable and understandable information about post-maintenance road
-conditions so that they can evaluate service quality, identify maintenance work
-that may require additional attention, and support decisions related to
-contractor performance and payment.
+\subsubsection{Municipalities}
 
-Winter road maintenance contractors are also major stakeholders. Contractors
-are responsible for performing services such as plowing, clearing, salting, and
-other winter road treatments according to contractual and municipal
-requirements. Since assessments of completed work may affect whether their work
-is considered satisfactory and whether it qualifies for payment, contractors
-have an interest in assessments being consistent, traceable, and based on the
-applicable municipal standards.
+Municipalities responsible for winter road maintenance are the primary
+stakeholders. Municipal staff need to verify whether roads have been
+maintained according to the standards set for their jurisdiction.
+They require clear and reliable information about post-maintenance conditions
+to assess service quality, identify work that may require additional
+attention, and support operational and contractual decisions.
 
-Municipal VU Consulting Inc. is a stakeholder and the supervising organization
-for the project. The organization provides domain knowledge related to municipal
-winter maintenance operations, service requirements, and the verification of
-maintenance quality. Its involvement helps ensure that the problem being
-addressed reflects practical municipal winter maintenance needs.
+\subsubsection{Winter Maintenance Contractors}
 
-Municipal decision-makers and staff responsible for contract administration,
-service monitoring, and winter maintenance operations are additional users of
-the resulting assessment information. These stakeholders may use the
-information to review maintenance performance and support operational and
-contractual decisions.
+Winter maintenance contractors are in charge of performing services such as
+plowing, clearing, salting, and other treatments according to municipal and
+contractual expectations. Since assessments of completed work may impact
+performance evaluation and payment verification, contractors have an interest
+in the assessment process being consistent, transparent, traceable, and based
+on the applicable municipal standard.
+
+\subsubsection{Municipal VU Consulting Inc.}
+
+Municipal VU Consulting Inc. is the supervising organization and a project
+stakeholder. The organization contributes domain knowledge related to
+municipal winter maintenance operations, service standards, and maintenance
+quality verification. Its involvement helps ensure that the problem and
+resulting project goals reflect practical municipal needs.
+
+\subsubsection{Municipal Operations and Contract Administration Staff}
+
+Municipal staff responsible for winter operations, service monitoring, contract
+administration, and contractor management are expected to use the resulting
+assessment information. These users need to review road conditions, determine
+whether certain standards have been satisfied, investigate unsatisfactory
+results, and use the available evidence to support decisions.
+
+\subsubsection{Road Users}
+
+Drivers and other users of municipal road infrastructure are indirect
+stakeholders. They rely on municipalities and maintenance providers to keep
+transportation infrastructure reasonably safe and usable during winter
+conditions. Even though road users are not expected to interact directly with the
+system, improvements in the consistency of winter-maintenance verification can
+support the quality of the services on which they depend.
 
 \subsection{Environment}
 
-The system is intended to operate within the context of municipal winter road
-maintenance. The information being assessed originates from roads that have
-undergone winter maintenance or treatment and is associated with specific
-geographic locations. The operating context therefore includes municipal road
-networks, winter maintenance vehicles, contractors, and municipal service
-standards.
+\subsubsection{Physical Environment}
 
-The physical environment can vary considerably. Road conditions may include
-different amounts of snow, ice, slush, water, exposed pavement, and other
-post-treatment conditions. Observations may also be collected during different
-weather and lighting conditions, including snowfall, precipitation, overcast
-conditions, daylight, darkness, and reduced visibility. Road appearance may
-further vary because of differences in road surfaces, surrounding
-infrastructure, traffic, and accumulated winter material. These variations form
-part of the environment in which post-maintenance road conditions must be
-assessed.
+The problem exists within municipal winter road networks during winter
+maintenance operations. Roads may be observed after plowing, salting, clearing,
+or other maintenance activities. Conditions can vary significantly between road
+segments and over time.
 
-Municipal users are expected to review assessment information using standard
-desktop or laptop computers. The user-facing software environment should
-therefore be accessible using commonly available computing hardware and modern
-web-browser software without requiring specialized computing equipment from
-municipal staff.
+Post-maintenance road surfaces may contain certain amounts of snow, ice, slush,
+water, exposed pavement, accumulated winter debris, or combinations of these
+conditions. The surrounding environment may also contain vehicles, road
+markings, intersections, parked vehicles, snowbanks, and other infrastructure.
 
-The user environment is distinct from the development and processing
-environment. Users should not be required to understand or directly interact
-with the underlying technical components responsible for producing road-state
-assessments. Instead, the user environment should present the resulting
-information in a form suitable for reviewing road conditions, applicable
-standards, maintenance compliance, and information relevant to contractor
-payment verification.
+Environmental conditions may include active snowfall, precipitation, overcast
+weather, bright sunlight, darkness, reduced visibility, and changing
+illumination. These variations are part of the operating environment and make
+the appearance of otherwise similar road conditions non-uniform.
+
+\subsubsection{User Hardware Environment}
+
+Municipal staff are expected to review assessment results using regular
+desktop or laptop computers. Users are not required to have specialized processing
+hardware to review road-condition assessments, compliance results, or
+verification records.
+
+\subsubsection{User Software Environment}
+
+The user-facing information is expected to be accessible through commonly
+available modern web-browser software. Users should be able to review relevant
+road observations, assessment results, applicable standards, and verification
+information without interacting directly with the underlying processing
+components.
+
+The development tools, programming languages, processing algorithms, and
+developer hardware used to implement the system are intentionally excluded
+from this section because they do not define the users' operating environment.
+
+\subsection{Scope}
+
+The core scope of the project is the verification of winter maintenance quality
+for municipal roadways after a maintenance or treatment activity has occurred.
+The project focuses on assessing the resulting road state, determining whether
+that state satisfies the standard applicable to its location, and producing
+information that can support verification of contractor work.
+
+The project does not replace municipal authorities in establishing winter
+maintenance standards. Instead, existing standards are treated as inputs to the
+assessment process. The project also does not make contractual policy or legal
+decisions on behalf of municipalities.
+
+Contractor payment verification is within the project scope, but the actual
+transfer of funds is not part of the core system. The core system provides
+evidence and a verification result that can support a payment decision. An
+automated payment platform is treated as a stretch goal.
+
+The core project focuses on roadways. Verification of sidewalks and bike lanes
+is treated as a stretch goal so that the primary project remains focused and
+achievable within the Capstone development period.
 
 \section{Goals}
 
-\subsection{Recognition of Post-Treatment Road State}
+\subsection{G1: Recognition of Post-Maintenance Road State}
 
-Examine the state of a road after winter maintenance and/or treatment has been done on it, and assign a label to the road state.
-This is useful for municipalities to assess the quality and completeness of work that is being done with respect to winter maintenance.
+The system shall provide a consistent assessment of the observable condition of
+a road segment once winter maintenance has occurred.
 
-\subsection{Assessment of Road State Based on Location}
+The assessment shall highlight the differences between the road-state categories established
+for the project so that a post-maintenance observation can be assigned an
+interpretable road-state label. For this goal, success will be evaluated using a
+labelled set of representative road observations and an agreed-upon
+classification performance measure.
 
-Based on the location of the road, determine if the road state meets the required standards. Different municipalities have different standards for road maintenance, and the same road state may be considered acceptable in one municipality but not in another.
-This goal is useful to ensure that results are consistent with pre-existing standards that municipalities have defined.
+This goal provides municipalities with an objective description of the
+condition in which a road was left in instead of just confirming that a
+maintenance vehicle travelled along the road.
 
-\subsection{Payment Verification Module}
+\subsection{G2: Location-Specific Maintenance Assessment}
 
-Based on the state of the road and the location, determine whether a contractor should be paid for their work.
-This goal is useful to ensure that the work that contractors do is being assessed in a timely manner, and that potential discrepancies are being flagged for review.
+The system shall verify whether an assessed road condition meets the
+winter maintenance standard applicable to the road's region.
+
+Given a road-state assessment, its location, and the applicable municipal
+standard, the system shall generate a clear compliance result indicating whether
+the observed condition meets the relevant standard or requires additional
+review.
+Success for this goal will be measured by matching generated compliance
+results against expected results for a set of predefined road-state and
+municipal-standard scenarios.
+
+This goal ensures that maintenance quality is evaluated according to the
+requirements of the responsible municipality instead of applying a single
+standard to each road.
+
+\subsection{G3: Maintenance Work Verification}
+
+The system shall output a traceable verification result for an assessed road
+segment that associates the road condition with the specific location,
+maintenance standard, and compliance result.
+
+A municipal reviewer shall be able to determine from the verification result
+why the maintenance work was identified as meeting the applicable standard,
+not meeting the standard, or requiring further review. Success for this goal
+will be evaluated by conlcuding that verification records have the
+information necessary to trace the assessment to its associated observation,
+location, standard level, and compliance result.
+
+This goal provides municipalities and contractors with reviewable evidence of
+how a maintenance-quality determination was attained.
+
+\subsection{G4: Contractor Payment Verification}
+
+The system shall use the maintenance compliance result to strengthen verification
+of whether completed contractor work satisfies the maintenance conditions
+associated with payment.
+
+For an evaluated maintenance activity, the system shall provide a clear payment
+verification status indicating that the work is supported for payment, is not
+supported based on the applicable maintenance standard, or requires manual
+review. Success for this goal will be assessed using predefined maintenance
+and payment-verification scenarios with known predictable outcomes.
+
+This goal is limited to aiding the payment-verification decision. Final
+payment authorization, contractual interpretation, and transfer of funds remain
+the responsibility of the municipality.
+
+\subsection{G5: Usable Review of Verification Results}
+
+The system shall present assessment and verification information in a form that
+municipal users can comprehend and review without requiring knowledge of the
+underlying processing methods involved.
+
+A reviewer shall be able to identify the road segment, observed road state,
+applicable standard, compliance result, and payment-verification status for an
+assessment. Success for this goal will be assessed through representative
+review tasks where users must locate and interpret the information required
+to understand a verification result.
+
+This goal ensures that the project's assessment capabilities produce useful
+information for the municipal stakeholders who ultimately need to review and
+act on the outcomes.
 
 \section{Stretch Goals}
 
 \begin{itemize}
 
-    \item \textbf{Contractor Payment Platform:} Build a platform that automatically sends payment to contractors once the AI verifies that a plowing or clearing pass met the required standard. This extends the core payment-verification module from calculating and flagging payments to actually distributing the payments.
+    \item \textbf{Contractor Payment Platform:}
+    Extend payment verification into payment execution by permitting an approved
+    contractor payment to be initiated once the required municipal approval
+    process has been finalized. This extends the core system beyond supporting
+    payment-related decisions to facilitating the resulting transaction.
 
-    \item \textbf{Dispute and Appeal Workflow:} Provide a structured process for contractors to contest a flagged discrepancy or a rejected pass. Municipal staff can review the supporting imagery and per-segment records to uphold or overturn the decision, with every step logged for auditability.
+    \item \textbf{Dispute and Appeal Workflow:}
+    Provide a structured process where contractors can dispute a
+    maintenance assessment or payment-verification result. Municipal reviewers
+    would be able to view the associated evidence, record a decision, and
+    maintain a traceable history of the dispute.
 
-    \item \textbf{Extended Verification for Sidewalks and Bike Lanes:} Extend the verification pipeline beyond roadways to cover sidewalks and bike lanes, adapting the surface-condition classification and required standards to each type of infrastructure.
+    \item \textbf{Extended Verification for Sidewalk Lanes:}
+    Extend maintenance-quality verification beyond only roadways to sidewalks and
+    bicycle lanes. The extension would represent the different
+    maintenance standards and observable conditions associated with these types
+    of infrastructure.
 
-    \item \textbf{Road Clearance Duration Estimation:} Estimate how long a road segment will stay clear after treatment, using weather data (such as temperature, precipitation, and wind) together with salting and treatment information, to help municipalities anticipate when re-treatment is needed.
+    \item \textbf{Road Clearance Duration Estimation:}
+    Estimate the duration for which an adequately treated road segment is expected to remain
+    in an acceptable state by considering relevant environmental and treatment
+    information. This could help municipalities in anticipating when additional
+    maintenance may be required.
 
 \end{itemize}
 
 \section{Custom Documents (CDs)}
 
-\wss{For CAS 741: State whether the project is a research project. This
+The Fall custom document will be the \textbf{Machine Learning (ML) Model
+Report}. This document will describe and evaluate the model used to support
+road-state recognition, including the data used for evaluation, the selected
+evaluation measures, experimental results, limitations, and relevant design
+decisions.
 
-designation, with the approval (or request) of the instructor, can be modified
+The Winter custom document will be the \textbf{Performance Report}. This
+document will evaluate the completed system against relevant performance
+objectives. The report will include quantitative measurements of system
+performance and discuss whether the implemented system provides adequate
+performance for its intended municipal use.
 
-over the course of the term.}
-
-\wss{For SE Capstone: List your custom documents (CDs).  Potential CDs include
-
-usability testing, code walkthroughs, user documentation, formal proof,
-
-GenderMag personas, Design Thinking, etc.  (The full list is on the course
-
-outline and in Lecture 02.) Normally the number of CDs will be two (one per
-
-term).  Approval of the CDs will be part of the discussion with the instructor
-
-for approving the project. The CDs, with the approval (or request) of the
-
-instructor, can be modified over the course of the term.}
+These custom documents may be refined with the approval of the course
+instructor as the project progresses.
 
 \newpage{}
 
 \section*{Appendix --- Reflection}
-
-\wss{Not required for CAS 741}
 
 \input{../Reflection.text}
 
@@ -261,13 +363,10 @@ instructor, can be modified over the course of the term.}
     \item What went well while writing this deliverable?
 
     \item What pain points did you experience during this deliverable, and how
-
     did you resolve them?
 
     \item How did you and your team adjust the scope of your goals to ensure
-
     they are suitable for a Capstone project (not overly ambitious but also of
-
     appropriate complexity for a senior design project)?
 
 \end{enumerate}
