@@ -330,13 +330,19 @@ instructor as the project progresses.
 \begin{enumerate}
 
     \item What went well while writing this deliverable?
+    
+    Team communication was the biggest strength. Fast response times on Discord let us resolve questions quickly and keep momentum, and the shared Git repository made remote collaboration smooth by giving us a single source of truth with a clear history of each person's contributions. Identifying stakeholders was also straightforward, since the project description and our conversations with our supervisor, Andrea, made clear who the system serves and who is affected by it. Those same conversations gave us a realistic sense of what belongs in the core project versus what is better treated as a stretch goal, which shaped the structure of the whole document. Looking ahead, the working habits we established here (quick asynchronous communication and version-controlled documents) are ones we should carry into later deliverables.
 
     \item What pain points did you experience during this deliverable, and how
     did you resolve them?
+    
+    Our main difficulty was defining the inputs and outputs, because the data we can expect from stakeholders is varied and still uncertain. The municipal partner has not been finalized, and that uncertainty made it hard to pin down scope with confidence. We resolved this by recognizing that the problem statement is meant to capture high-level parameters of the problem, not the implementation of the solution. That let us describe inputs and outputs in terms of what they represent (observed road condition, location, applicable standard) rather than committing to specific formats or sources that may change. It also reminded us that deferring detail is sometimes the right engineering decision rather than avoidance. To handle the questions that remain open, we scheduled a follow-up meeting with Andrea so that future requirements can be clarified as stakeholder data becomes clearer.
 
     \item How did you and your team adjust the scope of your goals to ensure
     they are suitable for a Capstone project (not overly ambitious but also of
     appropriate complexity for a senior design project)?
+    
+    Our original vision had contractor payments processed directly through our application. After discussing it with our TA, we recognized that building a payment platform would add significant complexity (financial integration, security, and policy concerns) that would compete with our core work of assessing road conditions accurately. Andrea confirmed this, and we reframed the goal so that the core system delivers a verification verdict on whether a contractor's work met the required standard, while executing the payment itself became a stretch goal. This kept the part of the goal that delivers the most value and fits the municipal decision-making process, where final authorization and payment properly remain with the municipality. We applied the same reasoning to sidewalk and bike-lane verification, keeping the core focused on roadways. The experience taught us that good scoping means separating what the system must prove from what it could eventually do.
 
 \end{enumerate}
 
